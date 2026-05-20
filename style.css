@@ -1,0 +1,1155 @@
+/* ===================================================
+   全局重置
+=================================================== */
+
+/* 去除默认边距 */
+*{
+    margin:0;
+    padding:0;
+
+    /* 让 width 包含 padding */
+    box-sizing:border-box;
+}
+
+/* 平滑滚动 */
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* ===================================================
+   body 页面整体
+=================================================== */
+
+body{
+
+    /* 中文字体 */
+    font-family:
+            "Microsoft YaHei",
+            "PingFang SC",
+            sans-serif;
+
+    /* 页面最小高度 */
+    min-height:100vh;
+
+    /* 页面上下左右间距 */
+    padding:40px 15px;
+
+    /* 字体颜色 */
+    color:#333;
+
+    /* 禁止横向滚动 */
+    overflow-x:hidden;
+
+    /* 海边背景图 + 白色透明遮罩 */
+    background:
+
+        /* 白色透明层 */
+            linear-gradient(
+                    rgba(255,255,255,.35),
+                    rgba(255,255,255,.35)
+            ),
+
+                /* 海边图片 */
+            url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop");
+
+    /* 背景铺满 */
+    background-size:cover;
+
+    /* 背景居中 */
+    background-position:center;
+
+    /* 背景固定 */
+    background-attachment:fixed;
+}
+
+
+/* ===================================================
+   登录页小卡片
+=================================================== */
+
+/*
+登录页使用：
+
+<div class="login-container">
+
+*/
+
+.login-container{
+
+    /* 宽度100% */
+    width:100%;
+
+    /* 最大宽度 */
+    max-width:620px;
+
+    /* 居中 */
+    margin:40px auto;
+
+    /* 内边距 */
+    padding:36px 34px;
+
+    /* 半透明白色 */
+    background:rgba(255,255,255,.72);
+
+    /* 毛玻璃 */
+    backdrop-filter:blur(18px);
+
+    /* 边框 */
+    border:1px solid rgba(255,255,255,.55);
+
+    /* 圆角 */
+    border-radius:28px;
+
+    /* 阴影 */
+    box-shadow:
+            0 10px 40px rgba(0,0,0,.08),
+            0 3px 14px rgba(0,0,0,.04);
+
+    /* 超出隐藏 */
+    overflow:hidden;
+}
+
+
+/* ===================================================
+   留言板 / 后台容器
+=================================================== */
+
+/*
+留言板和后台使用：
+
+<div class="container">
+
+*/
+
+.container{
+
+    /* 自适应宽度 */
+    width:min(92%,1000px);
+
+    /* 居中 */
+    margin:0 auto;
+
+    /* 内边距 */
+    padding:35px;
+
+    /* 半透明背景 */
+    background:rgba(255,255,255,.72);
+
+    /* 毛玻璃 */
+    backdrop-filter:blur(18px);
+
+    /* 边框 */
+    border:1px solid rgba(255,255,255,.55);
+
+    /* 圆角 */
+    border-radius:28px;
+
+    /* 阴影 */
+    box-shadow:
+            0 10px 40px rgba(0,0,0,.08),
+            0 3px 14px rgba(0,0,0,.04);
+
+    overflow:hidden;
+}
+
+
+/* ===================================================
+   标题
+=================================================== */
+
+h1,h2,h3{
+
+    /* 标题颜色 */
+    color:#2d6c7f;
+
+    /* 居中 */
+    text-align:center;
+
+    /* 下边距 */
+    margin-bottom:28px;
+
+    /* 为了下划线定位 */
+    position:relative;
+
+    /* 粗体 */
+    font-weight:700;
+}
+
+/* 主标题 */
+h1{
+    font-size:56px;
+}
+
+/* 二级标题 */
+h2{
+    font-size:38px;
+}
+
+/* 三级标题 */
+h3{
+    font-size:26px;
+}
+
+
+/* ===================================================
+   标题下划线
+=================================================== */
+
+h1::after,
+h2::after,
+h3::after{
+
+    content:"";
+
+    position:absolute;
+
+    /* 居中 */
+    left:50%;
+    transform:translateX(-50%);
+
+    /* 距离标题底部 */
+    bottom:-12px;
+
+    /* 宽高 */
+    width:90px;
+    height:5px;
+
+    /* 圆角 */
+    border-radius:20px;
+
+    /* 渐变颜色 */
+    background:
+            linear-gradient(
+                    90deg,
+                    #7dd3c7,
+                    #ffd6a5
+            );
+}
+
+
+/* ===================================================
+   段落文字
+=================================================== */
+
+p{
+
+    margin:12px 0;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+
+/* ===================================================
+   链接
+=================================================== */
+
+a{
+
+    color:#2d7c8c;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+/* 鼠标移入 */
+a:hover{
+    color:#ff8c6b;
+}
+
+
+/* ===================================================
+   表单
+=================================================== */
+
+form{
+    width:100%;
+}
+
+
+/* ===================================================
+   label
+=================================================== */
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#444;
+}
+
+
+/* ===================================================
+   输入框
+=================================================== */
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select{
+
+    /* 宽度撑满 */
+    width:100%;
+
+    /* 内边距 */
+    padding:15px 18px;
+
+    /* 上下间距 */
+    margin-top:8px;
+    margin-bottom:18px;
+
+    /* 去边框 */
+    border:none;
+
+    /* 圆角 */
+    border-radius:18px;
+
+    /* 半透明背景 */
+    background:rgba(255,255,255,.85);
+
+    color:#444;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+
+/* ===================================================
+   文本域
+=================================================== */
+
+textarea{
+
+    /* 最小高度 */
+    min-height:140px;
+
+    /* 允许垂直拉伸 */
+    resize:vertical;
+}
+
+
+/* ===================================================
+   输入框聚焦效果
+=================================================== */
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    background:#fff;
+
+    box-shadow:
+            0 0 0 4px rgba(125,211,199,.22),
+            0 5px 18px rgba(125,211,199,.15);
+}
+
+
+/* ===================================================
+   placeholder 提示文字
+=================================================== */
+
+input::placeholder,
+textarea::placeholder{
+    color:#9baab0;
+}
+
+
+/* ===================================================
+   按钮
+=================================================== */
+
+button,
+input[type="submit"]{
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:18px;
+
+    /* 渐变背景 */
+    background:
+            linear-gradient(
+                    135deg,
+                    #7dd3c7,
+                    #6bb7d6
+            );
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+            0 6px 18px rgba(109,183,214,.22);
+}
+
+
+/* ===================================================
+   按钮 hover
+=================================================== */
+
+button:hover,
+input[type="submit"]:hover{
+
+    transform:translateY(-2px);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #6cc5b8,
+                    #5ea8c8
+            );
+
+    box-shadow:
+            0 10px 24px rgba(109,183,214,.32);
+}
+
+
+/* ===================================================
+   留言卡片
+=================================================== */
+
+/*
+HTML:
+
+<div class="message-item">
+
+*/
+
+.message-item{
+
+    background:rgba(255,255,255,.55);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    transition:.3s;
+
+    box-shadow:
+            0 4px 12px rgba(0,0,0,.04);
+}
+
+
+/* 留言卡片 hover */
+
+.message-item:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(255,255,255,.72);
+}
+
+
+/* ===================================================
+   表格
+=================================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:24px;
+
+    overflow:hidden;
+}
+
+
+/* ===================================================
+   表头
+=================================================== */
+
+th{
+
+    padding:16px;
+
+    text-align:left;
+
+    background:rgba(125,211,199,.28);
+
+    color:#2d6c7f;
+
+    font-size:17px;
+}
+
+
+/* ===================================================
+   表格单元格
+=================================================== */
+
+td{
+
+    padding:18px 16px;
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+    vertical-align:middle;
+
+    font-size:15px;
+}
+
+
+/* ===================================================
+   表格 hover
+=================================================== */
+
+tr:hover{
+    background:rgba(255,255,255,.22);
+}
+
+
+/* ===================================================
+   表格里的 form
+=================================================== */
+
+td form{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+
+/* ===================================================
+   表格 select
+=================================================== */
+
+td select{
+
+    width:auto;
+
+    min-width:90px;
+
+    margin:0;
+}
+
+
+/* ===================================================
+   表格按钮
+=================================================== */
+
+td button{
+
+    margin:0;
+
+    padding:10px 18px;
+}
+
+
+/* ===================================================
+   提示框
+=================================================== */
+
+.success,
+.error{
+
+    padding:14px 16px;
+
+    border-radius:16px;
+
+    margin-bottom:18px;
+}
+
+
+/* 成功提示 */
+
+.success{
+
+    background:rgba(125,211,199,.18);
+
+    color:#2d8f6f;
+}
+
+
+/* 错误提示 */
+
+.error{
+
+    background:rgba(255,94,94,.12);
+
+    color:#ff5e5e;
+}
+
+
+/* ===================================================
+   图片
+=================================================== */
+
+img{
+
+    max-width:100%;
+
+    border-radius:18px;
+
+    margin-top:12px;
+}
+
+
+/* ===================================================
+   滚动条
+=================================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+/* 滚动条背景 */
+::-webkit-scrollbar-track{
+    background:#dff3f2;
+}
+
+/* 滚动条颜色 */
+::-webkit-scrollbar-thumb{
+
+    border-radius:20px;
+
+    background:
+            linear-gradient(
+                    #7dd3c7,
+                    #6bb7d6
+            );
+}
+
+
+/* ===================================================
+   工具栏与按钮组
+=================================================== */
+
+.toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    align-items:center;
+    margin:8px 0 24px;
+}
+
+.btn-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+}
+
+.btn-row button{
+    margin:0;
+}
+
+button.btn-secondary,
+input[type="submit"].btn-secondary{
+
+    background:rgba(255,255,255,.78);
+    color:#2d6c7f;
+    border:1px solid rgba(45,108,127,.28);
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+
+button.btn-secondary:hover,
+input[type="submit"].btn-secondary:hover{
+
+    transform:translateY(-2px);
+    background:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+button:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+}
+
+
+/* ===================================================
+   用户信息与徽章
+=================================================== */
+
+.user-meta{
+    text-align:center;
+    font-size:16px;
+    margin-bottom:8px;
+    color:#444;
+}
+
+.badge-admin{
+    display:inline-block;
+    margin-left:10px;
+    padding:4px 12px;
+    font-size:13px;
+    font-weight:600;
+    border-radius:999px;
+    background:linear-gradient(135deg,rgba(125,211,199,.45),rgba(107,183,214,.35));
+    color:#1a5a66;
+    vertical-align:middle;
+}
+
+
+/* ===================================================
+   个人资料与头像上传
+=================================================== */
+
+.profile-panel{
+    margin-bottom:22px;
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.profile-avatar-row{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:20px 24px;
+}
+
+.profile-avatar-wrap{
+    flex-shrink:0;
+}
+
+.profile-text{
+    flex:1;
+    min-width:200px;
+}
+
+.user-meta-inline{
+    text-align:left;
+    margin-bottom:12px;
+}
+
+.avatar-upload-form label{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    color:#2d6c7f;
+    margin-bottom:8px;
+}
+
+.avatar-upload-actions{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar-upload-actions input[type="file"]{
+    flex:1;
+    min-width:160px;
+}
+
+.user-avatar-lg{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    border:3px solid rgba(255,255,255,.9);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.user-avatar-sm{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    border:2px solid rgba(255,255,255,.85);
+}
+
+.user-avatar-xs{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    border:2px solid rgba(255,255,255,.75);
+}
+
+.user-avatar-placeholder{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#7dd3c7,#6bb7d6);
+    color:#fff;
+    font-weight:700;
+    flex-shrink:0;
+    box-sizing:border-box;
+}
+
+.user-avatar-placeholder.user-avatar-lg{
+    width:72px;
+    height:72px;
+    font-size:28px;
+    border-radius:50%;
+    border:3px solid rgba(255,255,255,.9);
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.user-avatar-placeholder.user-avatar-sm{
+    width:40px;
+    height:40px;
+    font-size:15px;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,.85);
+}
+
+.user-avatar-placeholder.user-avatar-xs{
+    width:28px;
+    height:28px;
+    font-size:12px;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,.75);
+}
+
+
+/* ===================================================
+   留言列表与单条样式
+=================================================== */
+
+.message-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.message-meta{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px 16px;
+    font-size:14px;
+    color:#5a6b72;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.message-meta-main{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex:1;
+    min-width:0;
+}
+
+.message-meta-text{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:6px 12px;
+}
+
+.message-author{
+    font-weight:700;
+    color:#2d6c7f;
+}
+
+.message-time{
+    color:#7a8b92;
+}
+
+.message-delete{
+    flex-shrink:0;
+    font-size:14px;
+    font-weight:600;
+}
+
+.message-body{
+    font-size:16px;
+    line-height:1.85;
+    color:#333;
+    word-break:break-word;
+}
+
+
+/* ===================================================
+   追加留言（楼中楼）
+=================================================== */
+
+.message-appends{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px dashed rgba(45,108,127,.2);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.message-append-block{
+    padding:14px 16px;
+    border-radius:14px;
+    background:rgba(125,211,199,.12);
+    border:1px solid rgba(125,211,199,.22);
+}
+
+.message-append-meta{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px 10px;
+    font-size:13px;
+    color:#5a6b72;
+    margin-bottom:8px;
+}
+
+.message-append-tag{
+    font-weight:700;
+    font-size:12px;
+    padding:2px 8px;
+    border-radius:6px;
+    background:rgba(45,108,127,.12);
+    color:#2d6c7f;
+}
+
+.message-append-author{
+    font-weight:600;
+    color:#2d6c7f;
+}
+
+.message-append-time{
+    color:#8a9ba0;
+}
+
+.message-append-body{
+    font-size:15px;
+    line-height:1.8;
+    color:#333;
+    word-break:break-word;
+}
+
+.append-form{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid rgba(0,0,0,.06);
+}
+
+.append-label{
+    font-size:14px;
+    color:#2d6c7f;
+    margin-bottom:6px;
+}
+
+.append-form textarea{
+    min-height:72px;
+    margin-top:4px;
+    margin-bottom:12px;
+}
+
+.append-form button{
+    margin-top:0;
+}
+
+.empty-hint{
+    text-align:center;
+    color:#7a8b92;
+    padding:24px 12px;
+}
+
+
+/* ===================================================
+   表单区块
+=================================================== */
+
+.compose-form button,
+.password-form button{
+    margin-top:6px;
+}
+
+.upload-form{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:14px;
+    margin-top:12px;
+}
+
+.upload-preview-label{
+    margin-top:20px;
+    font-weight:600;
+    color:#2d6c7f;
+}
+
+.upload-preview{
+    display:block;
+    max-width:min(100%,360px);
+}
+
+
+/* ===================================================
+   复选框与记住我
+=================================================== */
+
+.remember-row{
+    margin:4px 0 8px;
+}
+
+.checkbox-label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-weight:500;
+    color:#444;
+    cursor:pointer;
+    margin:0;
+}
+
+input[type="checkbox"]{
+    width:auto;
+    margin:0;
+    accent-color:#6bb7d6;
+    cursor:pointer;
+}
+
+
+/* ===================================================
+   文件选择
+=================================================== */
+
+input[type="file"]{
+    width:auto;
+    max-width:100%;
+    padding:12px 14px;
+    margin:0;
+    border-radius:16px;
+    background:rgba(255,255,255,.85);
+    border:1px dashed rgba(45,108,127,.25);
+    font-size:14px;
+    cursor:pointer;
+}
+
+input[type="file"]:focus{
+    outline:none;
+    border-style:solid;
+    box-shadow:0 0 0 4px rgba(125,211,199,.22);
+}
+
+
+/* ===================================================
+   后台管理页面的表单样式
+=================================================== */
+
+.inline-form{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    margin:0;
+}
+
+.form-input{
+    flex:1;
+    min-width:120px;
+    max-width:320px;
+    padding:10px 14px;
+    border-radius:12px;
+    border:1px solid rgba(0,0,0,.12);
+    background:#fff;
+    font-size:14px;
+    margin:0;
+}
+
+.btn-inline{
+    padding:10px 20px;
+    font-size:14px;
+    border-radius:12px;
+    white-space:nowrap;
+}
+
+/* ===================================================
+   后台管理页面的追加留言样式
+=================================================== */
+
+.appends-list{
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed rgba(45,108,127,.2);
+}
+
+.append-item{
+    padding:12px 14px;
+    border-radius:12px;
+    background:rgba(125,211,199,.12);
+    border:1px solid rgba(125,211,199,.22);
+    margin-bottom:10px;
+}
+
+.append-item:last-child{
+    margin-bottom:0;
+}
+
+.append-author{
+    font-weight:600;
+    color:#2d6c7f;
+    font-size:14px;
+    margin-right:10px;
+}
+
+.append-time{
+    color:#8a9ba0;
+    font-size:13px;
+}
+
+.append-item p{
+    font-size:14px;
+    line-height:1.75;
+    color:#333;
+    margin:8px 0 0;
+    word-break:break-word;
+}
+
+/* ===================================================
+   小屏适配
+=================================================== */
+
+@media (max-width:540px){
+
+    body{
+        padding:24px 12px;
+    }
+
+    h2{
+        font-size:30px;
+    }
+
+    h3{
+        font-size:21px;
+    }
+
+    .login-container,
+    .container{
+        padding:26px 20px;
+        border-radius:22px;
+    }
+
+    .message-delete{
+        margin-left:0;
+    }
+}
