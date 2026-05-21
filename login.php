@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     } elseif (strlen($password) < 6) {
         $errors = "密码至少6位";
     }
-
     if (empty($errors)) {
         if (filter_var($login_input, FILTER_VALIDATE_EMAIL)) {
             $sql = "SELECT id, name, password, role FROM username WHERE email = :login_input";
@@ -29,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
                 $sql = "SELECT id, name, password, role FROM username WHERE name = :login_input";
             }
         }
-        
+
         if (empty($errors)) {
             $stmt = $pdo->prepare($sql);
             $stmt->execute(['login_input' => $login_input]);
@@ -68,11 +67,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     <?php endif; ?>
     <form action="" method="post">
         <p>
-            <label for="login_name">用户名/邮箱</label>
-            <input id="login_name" type="text" name="name" value="<?php echo superClean($username); ?>" required autocomplete="username">
+            <label for="login_name">👨用户名/邮箱</label>
+            <input id="login_name" type="text" name="name" value="<?php echo superClean($username); ?>" required
+                   autocomplete="username">
         </p>
         <p>
-            <label for="login_password">密码</label>
+            <label for="login_password">🔒密码</label>
             <input id="login_password" type="password" name="password" required autocomplete="current-password">
         </p>
         <p class="remember-row">
